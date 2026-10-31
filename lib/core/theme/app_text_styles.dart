@@ -39,9 +39,7 @@ class AppTextStyles {
       letterSpacing: letterSpacing,
       height: height,
       textStyle: TextStyle(
-        fontFamilyFallback: [
-          GoogleFonts.notoSans().fontFamily ?? 'Noto Sans',
-        ],
+        fontFamilyFallback: [GoogleFonts.notoSans().fontFamily ?? 'Noto Sans'],
       ),
     );
   }
@@ -83,16 +81,9 @@ class AppTextStyles {
     letterSpacing: 0.2,
   );
 
-  static TextStyle get skip => _baseStyle(
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w500,
-    color: AppColors.textPrimary,
-  );
-
   static TextStyle get language => _baseStyle(
     fontSize: 15.sp,
     fontWeight: FontWeight.w600,
     color: AppColors.primary,
   );
 }
-

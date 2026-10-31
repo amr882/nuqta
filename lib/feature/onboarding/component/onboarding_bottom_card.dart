@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nuqta/core/theme/app_colors.dart';
 import 'package:nuqta/core/theme/app_text_styles.dart';
+import 'package:nuqta/core/widget/app_primary_button.dart';
 import 'package:nuqta/feature/onboarding/component/onboarding_dot_indicator.dart';
 import 'package:sizer/sizer.dart';
 
@@ -75,24 +76,9 @@ class OnboardingBottomCard extends StatelessWidget {
                 onDotTap: onDotTap,
               ),
               SizedBox(height: 2.5.h),
-              SizedBox(
-                width: double.infinity,
-                height: 6.2.h,
-                child: ElevatedButton(
-                  onPressed: onNext,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primary,
-                    foregroundColor: Colors.white,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(3.5.w),
-                    ),
-                  ),
-                  child: Text(
-                    isLastPage ? 'Get Started' : 'Next',
-                    style: AppTextStyles.button,
-                  ),
-                ),
+              AppPrimaryButton(
+                title: isLastPage ? 'Get Started' : 'Next',
+                onPressed: onNext,
               ),
             ],
           ),

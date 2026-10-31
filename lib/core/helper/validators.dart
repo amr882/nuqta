@@ -16,6 +16,15 @@ class Validators {
     return null;
   }
 
+  /// For login — only checks that the field is not empty.
+  static String? validateLoginPassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Password is required';
+    }
+    return null;
+  }
+
+  /// For sign-up — enforces complexity rules.
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
       return 'Password is required';

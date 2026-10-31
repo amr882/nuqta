@@ -8,7 +8,13 @@ import 'package:sizer/sizer.dart';
 
 class Nuqta extends StatelessWidget {
   final AppRouter appRouter;
-  const Nuqta({super.key, required this.appRouter});
+  final String initialRoute;
+
+  const Nuqta({
+    super.key,
+    required this.appRouter,
+    this.initialRoute = Routes.onboarding,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +38,7 @@ class Nuqta extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Nuqta',
           onGenerateRoute: appRouter.generateRoute,
-          initialRoute: Routes.onboarding,
+          initialRoute: initialRoute,
         );
       },
     );
